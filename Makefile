@@ -21,13 +21,14 @@ clean:
 system_install:
 	@echo "Adding ${BINARY_NAME} to /usr/local/bin"
 	@sudo cp tmp/${BINARY_NAME} /usr/local/bin
+	@sudo chmod a+x /usr/local/bin/${BINARY_NAME}
 	@echo "Adding ${CONFIG_NAME} to /etc"
 	@sudo cp ${CONFIG_NAME} /etc
 	@echo "Adding ${PLIST_NAME} to ~/Library/LaunchAgents"
 	@cp ${PLIST_NAME} ~/Library/LaunchAgents
 	@echo "Loading and Launching ${PLIST_NAME} in ~/Library/LaunchAgents"
-	launchctl load ~/Library/LaunchAgents/${PLIST_NAME}
-	launchctl start ~/Library/LaunchAgents/${PLIST_NAME}
+	@launchctl load ~/Library/LaunchAgents/${PLIST_NAME}
+	@launchctl start ~/Library/LaunchAgents/${PLIST_NAME}
 
 start: run
 
