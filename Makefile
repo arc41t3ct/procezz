@@ -1,5 +1,5 @@
 BINARY_NAME=procezz
-CONFIG_NAME=procezz.config
+CONFIG_NAME=procezz.conf
 PLIST_NAME=procezz.plist
 
 build:
