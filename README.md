@@ -4,7 +4,7 @@ Watches processes on MacOS and can perform actions based on startup or shutdown 
 ## Compile
 
 ```
-go build -ldflags="-s -w" -o procezz .
+go build -ldflags="-s -w" -o procezz cmd/procezz/main.go
 ```
 
 ## Running without system
