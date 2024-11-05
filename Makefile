@@ -4,7 +4,7 @@ PLIST_NAME=procezz.plist
 
 build:
 	@echo "Building procezz"
-	@go build -ldflags="-s -w" -o tmp/${BINARY_NAME} .
+	@go build -ldflags="-s -w" -o tmp/${BINARY_NAME} cmd/procezz/main.go
 	@echo "procezz build!"
 
 run: build
