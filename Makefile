@@ -27,6 +27,8 @@ system_install:
 	@echo "Adding ${PLIST_NAME} to ~/Library/LaunchAgents"
 	@cp ${PLIST_NAME} ~/Library/LaunchAgents
 	@echo "Loading and Launching ${PLIST_NAME} in ~/Library/LaunchAgents"
+	@launchctl stop ~/Library/LaunchAgents/${PLIST_NAME} || true
+	@launchctl unload ~/Library/LaunchAgents/${PLIST_NAME} || true
 	@launchctl load ~/Library/LaunchAgents/${PLIST_NAME}
 	@launchctl start ~/Library/LaunchAgents/${PLIST_NAME}
 
